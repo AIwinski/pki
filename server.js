@@ -1,8 +1,10 @@
-var express = require("express");
-var app = express();
+const express = require("express");
+const app = express();
 
-app.get("/", function(req, res) {
-    res.send("Hello World!");
+app.get("*", function(req, res) {
+    res.status(200).json({
+        message: "Hello world"
+    });
 });
 let port = process.env.port || 3000;
 
